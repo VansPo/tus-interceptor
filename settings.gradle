@@ -1,0 +1,2 @@
+include ':tus-interceptor'
+rootProject.name = "tus-interceptor"
