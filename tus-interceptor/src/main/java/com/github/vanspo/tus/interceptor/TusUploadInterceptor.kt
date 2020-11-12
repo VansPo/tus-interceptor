@@ -1,8 +1,8 @@
-package com.ipvans.tus.interceptor
+package com.github.vanspo.tus.interceptor
 
-import com.ipvans.tus.exceptions.FingerprintNotFoundException
-import com.ipvans.tus.exceptions.ProtocolException
-import com.ipvans.tus.store.TusUrlStore
+import com.github.vanspo.tus.exceptions.FingerprintNotFoundException
+import com.github.vanspo.tus.exceptions.ProtocolException
+import com.github.vanspo.tus.store.TusUrlStore
 import okhttp3.FormBody
 import okhttp3.Interceptor
 import okhttp3.Request

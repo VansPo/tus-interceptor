@@ -1,4 +1,4 @@
-package com.ipvans.tus.store
+package com.github.vanspo.tus.store
 
 import java.net.URL
 

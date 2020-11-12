@@ -1,4 +1,4 @@
-package com.ipvans.tus.interceptor
+package com.github.vanspo.tus.interceptor
 
 @Target(AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.RUNTIME)

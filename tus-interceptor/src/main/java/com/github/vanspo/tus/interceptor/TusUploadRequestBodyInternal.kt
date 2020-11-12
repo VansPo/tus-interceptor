@@ -1,4 +1,4 @@
-package com.ipvans.tus.interceptor
+package com.github.vanspo.tus.interceptor
 
 import okhttp3.MediaType
 import okhttp3.RequestBody

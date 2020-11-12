@@ -16,7 +16,7 @@ dependencies {
 ext {
     PUBLISH_GROUP_ID = 'com.github.vanspo'
     PUBLISH_ARTIFACT_ID = 'tus-interceptor'
-    PUBLISH_VERSION = '1.0.0'
+    PUBLISH_VERSION = '1.0.1'
 }
 
 apply from: "${rootProject.projectDir}/scripts/publish-maven.gradle"

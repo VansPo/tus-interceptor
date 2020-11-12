@@ -1,9 +1,11 @@
-package com.ipvans.tus
+package com.github.vanspo.tus
 
-import com.ipvans.tus.interceptor.*
-import com.ipvans.tus.store.InMemoryTusUrlStore
+import com.github.vanspo.tus.interceptor.TusUpload
+import com.github.vanspo.tus.interceptor.TusUploadInterceptor
+import com.github.vanspo.tus.interceptor.TusUploadRequestBody
+import com.github.vanspo.tus.store.InMemoryTusUrlStore
 import com.google.gson.Gson
-import com.ipvans.tus.store.TusUrlStore
+import com.github.vanspo.tus.store.TusUrlStore
 import kotlinx.coroutines.*
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
