@@ -87,7 +87,7 @@ assert(writtenBytes == (1 .. fileSize).toList())
 ### Gradle
 
 ```groovy
-implementation 'com.github.vanspo:tus-interceptor:1.0.0'
+implementation 'com.github.vanspo:tus-interceptor:1.0.1'
 ```
 
 ## License
