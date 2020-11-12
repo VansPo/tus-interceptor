@@ -11,8 +11,8 @@ internal class TusUploadRequestBodyInternal(
     private val mediaType: MediaType?,
     file: File,
     private val offset: Long = 0L,
-    private val chunkSize: Int = 2 * 1024 * 1024,
-    private val payloadSize: Int = 10 * 1024 * 1024,
+    private val chunkSize: Int,
+    private val payloadSize: Int,
     private val onProgressUpdate: (requestId: String, bytesWritten: Long, totalBytes: Long) -> Unit = { _, _, _ -> }
 ) : RequestBody() {
     private val inputStream = FileInputStream(file)

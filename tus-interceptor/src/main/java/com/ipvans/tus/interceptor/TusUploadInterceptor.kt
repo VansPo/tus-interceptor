@@ -12,10 +12,12 @@ import java.net.URL
 
 class TusUploadInterceptor(
     private val urlStore: TusUrlStore,
+    private val chunkSize: Int = DEFAULT_CHUNK_SIZE,
+    private val payloadSize: Int = DEFAULT_PAYLOAD_SIZE,
+    private val tusVersion: String = TUS_VERSION,
     private val onUploadStarted: (fingerprint: String) -> Unit = {},
     private val onProgressUpdate: (fingerprint: String, bytesWritten: Long, totalBytes: Long) -> Unit = { _, _, _ -> },
-    private val onUploadFinished: (fingerprint: String) -> Unit = {},
-    private val tusVersion: String = TUS_VERSION
+    private val onUploadFinished: (fingerprint: String) -> Unit = {}
 ) : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val originalRequest = chain.request()
@@ -119,7 +121,9 @@ class TusUploadInterceptor(
             requestBody.mediaType,
             requestBody.file,
             offset,
-            onProgressUpdate = onProgressUpdate
+            onProgressUpdate = onProgressUpdate,
+            chunkSize = chunkSize,
+            payloadSize = payloadSize
         )
         val uploadRequest = Request.Builder()
             .url(url)
@@ -137,5 +141,7 @@ class TusUploadInterceptor(
         private const val UPLOAD_OFFSET = "Upload-Offset"
         private const val TUS_RESUMABLE = "Tus-Resumable"
         private const val TUS_VERSION = "1.0.0"
+        private const val DEFAULT_CHUNK_SIZE = 2 * 1024 * 1024
+        private const val DEFAULT_PAYLOAD_SIZE = 10 * 1024 * 1024
     }
 }
