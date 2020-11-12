@@ -1,4 +1,5 @@
 plugins {
+    id 'java-library'
     id 'kotlin'
 }
 
@@ -11,3 +12,11 @@ dependencies {
     testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9'
     testImplementation 'com.squareup.okhttp3:mockwebserver:4.9.0'
 }
+
+ext {
+    PUBLISH_GROUP_ID = 'com.github.vanspo'
+    PUBLISH_ARTIFACT_ID = 'tus-interceptor'
+    PUBLISH_VERSION = '1.0.0'
+}
+
+apply from: "${rootProject.projectDir}/scripts/publish-maven.gradle"

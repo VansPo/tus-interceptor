@@ -133,6 +133,7 @@ class TusInterceptorTest {
 
     private fun createFile(size: Int) = File("text.txt").apply {
         createNewFile()
+        writeText("")
         repeat((0 until size).count()) { appendText("a") }
         deleteOnExit()
     }
